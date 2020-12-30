@@ -1,2 +1,2 @@
 # FCC_practice
-Problems from FCC
+Problems from Free Code Camp
