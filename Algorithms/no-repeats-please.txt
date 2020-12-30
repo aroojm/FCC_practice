@@ -1,0 +1,38 @@
+function permAlone(str) {
+  let input = str.split('');
+  let output = [];
+  heapPermute(input.length, input, output);
+  // console.log(output);
+  return count(output);
+}
+function count(arr){
+  let num = 0;
+for(let i =0; i < arr.length; i++){
+  if(!(/([a-z])\1/i).test(arr[i])){num++;}
+}
+return num;
+}
+
+function heapPermute(n, arrIn, arrOut) {
+  if (n == 1) {
+    let temp = arrIn.join('');
+     arrOut.push(temp);
+    return;
+  }
+  for (let i = 0; i < n; i+= 1) {
+    heapPermute(n - 1, arrIn, arrOut);
+    if (n % 2 == 0) {
+      swap(arrIn, i, n - 1);
+    } else {
+      swap(arrIn,0, n - 1);
+    }
+  }
+}
+
+function swap(arr, i, j) {
+  let temp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = temp;
+}
+
+permAlone('aab');

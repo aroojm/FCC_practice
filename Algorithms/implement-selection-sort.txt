@@ -1,0 +1,20 @@
+function selectionSort(array) {
+  for(let i=0; i <array.length; i++){
+    let minIndex = i;
+    for(let j= i; j <array.length; j++){
+      if(array[minIndex] > array[j]){
+        minIndex = j;
+      } 
+  }
+  swap(array,i,minIndex);
+  }
+  return array;  
+}
+function swap(arr,l,m){
+  let temp = arr[l];
+  arr[l] = arr[m];
+  arr[m] = temp;
+}
+
+
+selectionSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);

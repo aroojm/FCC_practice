@@ -1,0 +1,16 @@
+function quickSort(array){
+  if(array.length === 0){
+    return [];
+  } else {
+    let small = [];
+    let equal = [];
+    let large = [];
+    let pivot = array[Math.ceil((array.length-1)/2)];
+    for (let element of array){
+      if (element < pivot){small.push(element);}
+      else if (element > pivot){large.push(element);}
+      else {equal.push(element);}
+    }
+    return [...quickSort(small),...equal,...quickSort(large)];
+  }
+}
