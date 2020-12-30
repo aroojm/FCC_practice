@@ -1,0 +1,19 @@
+function mutation(arr) {
+  let a = arr[0].toLowerCase();
+  let b = arr[1].toLowerCase();
+  
+ let flag = true;
+    let i = 0;
+    while ( i < b.length){
+      if (a.indexOf(b[i]) < 0){
+        console.log(i);
+        flag = false;
+      }
+      i++;
+    }
+    return flag;
+  
+}
+
+
+mutation(["hello", "hey"]);
