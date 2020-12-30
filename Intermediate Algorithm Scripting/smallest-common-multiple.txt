@@ -1,0 +1,58 @@
+function smallestCommons(arr) {
+  let start = arr[0];
+  let end = arr[1];
+  if(start > end){
+    let temp = start;
+    start = end;
+    end = temp;
+    arr = [start,end];
+  }
+  let range = getArray(arr);
+  let a = arr[0];
+  let b = arr[1];
+  let l = lcm(a,b);
+  let i = 2;
+  let startover = false;
+ 
+  do{
+    startover = false;  
+    let j = 0;
+  while(j < range.length){
+      if(l%range[j] !== 0 ){
+      l = lcm(a,b) *i;
+      i++;
+      startover = true;
+      break;
+    }
+    j++;
+  }
+  } while (startover);
+ 
+  return l;
+
+}
+
+function getArray(arr){
+  let a = [];
+  let start = arr[0];
+  let end = arr[1];
+  for(let i = start+1; i < end; i++){
+    a.push(i);
+  }
+  return a;
+}
+
+function gcd(a,b){
+  while(b){
+    let temp = b;
+    b = a % b;
+    a = temp;
+  }
+  return a;
+}
+
+function lcm(a,b){
+  return (a*b)/gcd(a,b);
+}
+
+smallestCommons([2,10]);

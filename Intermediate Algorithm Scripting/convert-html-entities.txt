@@ -1,0 +1,20 @@
+function convertHTML(str) {
+  return str.replace(/&|<|>|\"|\'/gi, function (x) {
+      switch(x){
+    case "&":
+    return "&amp;";
+    case "<":
+    return "&lt;";
+    case ">":
+    return "&gt;";
+    case "\"":
+    return "&quot;";
+    case "\'":
+    return "&apos;";
+    default:
+    return null;
+  }
+  });
+}
+
+convertHTML("Dolce & Gabbana");

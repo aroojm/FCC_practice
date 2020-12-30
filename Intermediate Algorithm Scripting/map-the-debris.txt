@@ -1,0 +1,14 @@
+function orbitalPeriod(arr) {
+  for(let i =0; i<arr.length; i++){
+    arr[i]["orbitalPeriod"] = period(arr[i]["avgAlt"]);
+    delete arr[i].avgAlt;
+  }
+  return arr;
+}
+function period(altitude){
+  var GM = 398600.4418;
+  var earthRadius = 6367.4447;
+  return Math.round(2*Math.PI*Math.sqrt((altitude+earthRadius)**3/GM)); 
+}
+
+orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);

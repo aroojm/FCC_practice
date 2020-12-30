@@ -1,0 +1,27 @@
+function sumFibs(num) {
+  return fibArr(num).filter(x => x % 2 !== 0).reduce((sum,y) => sum + y,0);
+}
+
+function fibArr(n){
+  let i = 1;
+  let j = fib(0);
+  let arr = [];
+  while(j <= n){
+    arr.push(j);
+    j = fib(i);
+    i++;
+  }
+  return arr;
+}
+
+function fib(n){
+  if (n === 0){
+    return 0;
+  } else if (n === 1){
+    return 1;
+  } else {
+    return fib(n-1)+fib(n-2);
+  }
+}
+
+sumFibs(4);

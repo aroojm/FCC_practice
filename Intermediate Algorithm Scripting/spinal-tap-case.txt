@@ -1,0 +1,9 @@
+function spinalCase(str) {
+   let arr = str.split(/[\s]|[-]|[_]|(?=[A-Z])/);
+  for(let i = 0; i < arr.length; i++){
+    arr[i] = arr[i].toLowerCase();
+  }
+  return arr.join("-");
+}
+
+spinalCase('This Is Spinal Tap');

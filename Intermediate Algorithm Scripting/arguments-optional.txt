@@ -1,0 +1,20 @@
+function addTogether() {
+  let a = arguments[0];
+  let b = arguments[1];
+    if(arguments.length === 1){
+      if(!check(a)){
+    return undefined;
+  } else{
+    return x => {if(!check(x)){return undefined;} else{return (x+arguments[0]);}}
+  }} else {
+    if(!check(a) | !check(b)){
+    return undefined;
+  } else{
+    return a + b;
+  }} 
+}
+function check(n){
+  return Number.isInteger(n);
+}
+
+addTogether(2,3);

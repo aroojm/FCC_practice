@@ -1,0 +1,9 @@
+function whatIsInAName(collection, source) {
+   let myArr = collection;
+  for(let prop in source){
+    myArr = myArr.filter(el => el[prop] === source[prop]);
+  }
+  return myArr;
+}
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });

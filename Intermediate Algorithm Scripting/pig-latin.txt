@@ -1,0 +1,15 @@
+function translatePigLatin(str) {
+  let vowels = /[aeiou]/;
+  if(vowels.test(str[0])){
+    return str.concat("way");
+  } else {
+    let i = 0;
+    while(!vowels.test(str[i])){
+      i++;
+    }
+    let temp = str.substr(0,i);
+    return str.slice(i).concat(temp+"ay");
+  }
+}
+
+translatePigLatin("consonant");
